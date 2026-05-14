@@ -30,18 +30,115 @@ body {
       font-size: font.$base;
     }
   }
+  .add-folder:hover {
+    background-color: color.$blue-700;
+  }
 }
 
-.empty-state {
-  @include flex.flex-box(center, center, column);
-  padding: 5rem;
-  gap: 16px;
-  font-family: font.$roboto;
-  font-weight: font.$normal;
-  svg {
-    color: color.$gray-300;
+main {
+  padding: 1rem 1.5rem;
+  .empty-state {
+    @include flex.flex-box(center, center, column);
+    display: none;
+    padding: 5rem;
+    gap: 16px;
+    font-family: font.$roboto;
+    font-weight: font.$normal;
+    svg {
+      color: color.$gray-300;
+    }
+    p {
+      color: color.$gray-500;
+    }
   }
-  p {
-    color: color.$gray-500;
+
+  .form-new-folder {
+    @include flex.flex-box(center, center, column);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: color.$bg-hitam-overlay;
+
+    form {
+      background-color: color.$bg-putih;
+      padding: 1.3rem;
+      font-family: font.$roboto;
+      border-radius: 0.8rem;
+      h2 {
+        font-size: font.$xxl;
+        font-weight: font.$medium;
+      }
+      input {
+        width: 28rem;
+        font-size: font.$base;
+        font-weight: font.$normal;
+        padding: 12px 14px;
+        border-radius: 0.5rem;
+        border: 2px solid color.$gray-300;
+        outline: none;
+        margin: 1.2rem 0;
+      }
+      input:focus {
+        border-color: color.$blue-500;
+        outline: none;
+      }
+      .btn {
+        @include flex.flex-box(flex-end);
+        gap: 1rem;
+        .cancel {
+          background-color: color.$gray-200;
+          border: 1px solid color.$gray-200;
+          padding: 0.7rem 1rem;
+          border-radius: 0.5rem;
+          font-family: font.$roboto;
+          font-size: font.$base;
+          font-weight: font.$medium;
+        }
+        .cancel:hover {
+          background-color: color.$gray-300;
+        }
+        .make-folder {
+          background-color: color.$blue-500;
+          border: 1px solid color.$gray-200;
+          padding: 0.7rem 1rem;
+          border-radius: 0.5rem;
+          font-family: font.$roboto;
+          font-size: font.$base;
+          font-weight: font.$medium;
+          color: white;
+        }
+        .make-folder:hover {
+          background-color: color.$blue-600;
+        }
+      }
+    }
+  }
+
+  .list-folders {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    .folder {
+      @include flex.flex-box(flex-start, center);
+      border: 2px solid color.$gray-200;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      gap: 15px;
+      svg {
+        color: color.$blue-600;
+      }
+      span {
+        font-family: font.$roboto;
+        font-size: font.$lg;
+        font-weight: font.$medium;
+      }
+    }
+    .folder:hover {
+      border-color: color.$blue-500;
+      box-shadow: 3px 3px 5px color.$gray-200;
+    }
   }
 }
