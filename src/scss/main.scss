@@ -117,28 +117,37 @@ main {
     }
   }
 
-  .list-folders {
+  .list-items {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
-    .folder {
-      @include flex.flex-box(flex-start, center);
+    .item {
+      height: 100px;
+      @include flex.flex-box(center, center);
       border: 2px solid color.$gray-200;
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
       gap: 15px;
-      svg {
-        color: color.$blue-600;
-      }
-      span {
+      background-color: color.$blue-600;
+      color: white;
+      position: relative;
+      p {
         font-family: font.$roboto;
-        font-size: font.$lg;
-        font-weight: font.$medium;
+        font-size: font.$base;
+        font-weight: font.$normal;
       }
-    }
-    .folder:hover {
-      border-color: color.$blue-500;
-      box-shadow: 3px 3px 5px color.$gray-200;
+      .delete {
+        @include flex.flex-box(center, center);
+        width: 35px;
+        height: 35px;
+        background-color: color.$red-600;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+      }
     }
   }
 }

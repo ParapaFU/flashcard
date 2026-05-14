@@ -125,32 +125,44 @@ main .form-new-folder form .btn .make-folder {
 main .form-new-folder form .btn .make-folder:hover {
   background-color: #2563eb;
 }
-main .list-folders {
+main .list-items {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
-main .list-folders .folder {
+main .list-items .item {
+  height: 100px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   border: 2px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   gap: 15px;
+  background-color: #2563eb;
+  color: white;
+  position: relative;
 }
-main .list-folders .folder svg {
-  color: #2563eb;
-}
-main .list-folders .folder span {
+main .list-items .item p {
   font-family: "roboto", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
 }
-main .list-folders .folder:hover {
-  border-color: #3b82f6;
-  box-shadow: 3px 3px 5px #e5e7eb;
+main .list-items .item .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 35px;
+  height: 35px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
 
 /*# sourceMappingURL=main.css.map */
