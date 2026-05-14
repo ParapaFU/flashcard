@@ -1,3 +1,53 @@
+body {
+  background: #f9fafb;
+}
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 18px 25px;
+  font-family: "roboto", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+  border-bottom: 2px solid #e5e7eb;
+  box-shadow: 0 0 9px #e5e7eb;
+  gap: 0.5rem;
+}
+.header .add-folder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #2563eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-color: #e5e7eb;
+}
+.header .add-folder svg,
+.header .add-folder span {
+  color: white;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  gap: 16px;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+}
+.empty-state svg {
+  color: #d1d5db;
+}
+.empty-state p {
+  color: #6b7280;
+}
 
 /*# sourceMappingURL=main.css.map */

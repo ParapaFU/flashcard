@@ -1,0 +1,47 @@
+@use "modules/color" as color;
+@use "modules/font" as font;
+@use "modules/flex" as flex;
+
+body {
+  background: color.$bg-utama;
+}
+
+.header {
+  @include flex.flex-box(space-between, center);
+  padding: 18px 25px;
+  font-family: font.$roboto;
+  font-size: font.$xxxl;
+  font-weight: font.$medium;
+  border-bottom: 2px solid color.$gray-200;
+  box-shadow: 0 0 9px color.$gray-200;
+  gap: 0.5rem;
+
+  .add-folder {
+    @include flex.flex-box(center, center);
+    background-color: color.$blue-600;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-color: color.$gray-200;
+    svg,
+    span {
+      color: white;
+      font-family: font.$roboto;
+      font-weight: font.$medium;
+      font-size: font.$base;
+    }
+  }
+}
+
+.empty-state {
+  @include flex.flex-box(center, center, column);
+  padding: 5rem;
+  gap: 16px;
+  font-family: font.$roboto;
+  font-weight: font.$normal;
+  svg {
+    color: color.$gray-300;
+  }
+  p {
+    color: color.$gray-500;
+  }
+}

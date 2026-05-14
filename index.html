@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css dan reset -->
+    <link rel="stylesheet" href="src/css/reset.css" />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <title>Flashcard</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>FlashCard Folder</h1>
+      <button class="add-folder">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"
+          />
+        </svg>
+        <span>Tambah Folder</span>
+      </button>
+    </header>
+    <section class="list-folder"></section>
+    <section class="empty-state">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="72"
+        height="72"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20zm0-2h16V8h-8.825l-2-2H4zm0 0V6z"
+        />
+      </svg>
+      <p>Belum ada folder. Klik tombol "Tambah Folder" untuk memulai.</p>
+    </section>
+  </body>
+</html>
