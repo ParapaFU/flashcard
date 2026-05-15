@@ -16,7 +16,7 @@ body {
   box-shadow: 0 0 9px color.$gray-200;
   gap: 0.5rem;
 
-  .add-folder {
+  .add-card {
     @include flex.flex-box(center, center);
     background-color: color.$blue-600;
     border-radius: 0.5rem;
@@ -30,7 +30,7 @@ body {
       font-size: font.$base;
     }
   }
-  .add-folder:hover {
+  .add-card:hover {
     background-color: color.$blue-700;
   }
 }

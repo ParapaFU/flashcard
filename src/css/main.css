@@ -15,7 +15,7 @@ body {
   box-shadow: 0 0 9px #e5e7eb;
   gap: 0.5rem;
 }
-.header .add-folder {
+.header .add-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,14 +25,14 @@ body {
   padding: 0.5rem 1rem;
   border-color: #e5e7eb;
 }
-.header .add-folder svg,
-.header .add-folder span {
+.header .add-card svg,
+.header .add-card span {
   color: white;
   font-family: "roboto", sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
-.header .add-folder:hover {
+.header .add-card:hover {
   background-color: #1d4ed8;
 }
 
