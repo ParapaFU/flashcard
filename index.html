@@ -34,19 +34,24 @@
       </button>
     </header>
     <main>
-      <section class="form-new-folder">
+      <section class="form-new-card">
         <form action="">
-          <h2>Tambah Folder Baru</h2>
-          <input type="text" placeholder="Nama folder" />
+          <h2>Tambah Card Baru</h2>
+          <div class="input-kata">
+          <label for="input-text-front">Front:</label>
+          <input type="text" placeholder="Kata card" id="input-text-front" />
+          <label for="input-text-behind">Behind:</label>
+          <input type="text" placeholder="Kata card" id="input-text-behind" />
+          </div>
           <div class="btn">
             <button class="cancel">Batal</button>
-            <button class="make-folder">Buat Folder</button>
+            <button class="make-folder">Buat Card</button>
           </div>
         </form>
       </section>
       <section class="list-items">
         <div class="item">
-          <p>Mana</p>
+          <p class="text-front">Mana</p>
           <button class="delete">
             <svg
               xmlns="http://www.w3.org/2000/svg"

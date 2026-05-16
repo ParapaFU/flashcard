@@ -56,7 +56,7 @@ main .empty-state svg {
 main .empty-state p {
   color: #6b7280;
 }
-main .form-new-folder {
+main .form-new-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,18 +68,32 @@ main .form-new-folder {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
-main .form-new-folder form {
+main .form-new-card form {
   background-color: #ffffff;
   padding: 1.3rem;
   font-family: "roboto", sans-serif;
   border-radius: 0.8rem;
 }
-main .form-new-folder form h2 {
+main .form-new-card form h2 {
   font-size: 1.5rem;
   font-weight: 500;
 }
-main .form-new-folder form input {
+main .form-new-card form .input-kata {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 1.5rem 0 10px;
+}
+main .form-new-card form .input-kata label {
+  background-color: yellow;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+main .form-new-card form .input-kata input {
   width: 28rem;
   font-size: 1rem;
   font-weight: 400;
@@ -87,20 +101,20 @@ main .form-new-folder form input {
   border-radius: 0.5rem;
   border: 2px solid #d1d5db;
   outline: none;
-  margin: 1.2rem 0;
+  margin: 0.5rem 0 1.2rem;
 }
-main .form-new-folder form input:focus {
+main .form-new-card form .input-kata input:focus {
   border-color: #3b82f6;
   outline: none;
 }
-main .form-new-folder form .btn {
+main .form-new-card form .btn {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   flex-direction: row;
   gap: 1rem;
 }
-main .form-new-folder form .btn .cancel {
+main .form-new-card form .btn .cancel {
   background-color: #e5e7eb;
   border: 1px solid #e5e7eb;
   padding: 0.7rem 1rem;
@@ -109,10 +123,10 @@ main .form-new-folder form .btn .cancel {
   font-size: 1rem;
   font-weight: 500;
 }
-main .form-new-folder form .btn .cancel:hover {
+main .form-new-card form .btn .cancel:hover {
   background-color: #d1d5db;
 }
-main .form-new-folder form .btn .make-folder {
+main .form-new-card form .btn .make-folder {
   background-color: #3b82f6;
   border: 1px solid #e5e7eb;
   padding: 0.7rem 1rem;
@@ -122,7 +136,7 @@ main .form-new-folder form .btn .make-folder {
   font-weight: 500;
   color: white;
 }
-main .form-new-folder form .btn .make-folder:hover {
+main .form-new-card form .btn .make-folder:hover {
   background-color: #2563eb;
 }
 main .list-items {
@@ -143,6 +157,7 @@ main .list-items .item {
   background-color: #2563eb;
   color: white;
   position: relative;
+  transition: width 0.5s ease;
 }
 main .list-items .item p {
   font-family: "roboto", sans-serif;
@@ -163,6 +178,9 @@ main .list-items .item .delete {
   position: absolute;
   top: -10px;
   right: -10px;
+}
+main .list-items .item:hover {
+  width: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

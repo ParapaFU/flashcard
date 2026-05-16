@@ -52,7 +52,7 @@ main {
     }
   }
 
-  .form-new-folder {
+  .form-new-card {
     @include flex.flex-box(center, center, column);
     display: none;
     position: absolute;
@@ -61,6 +61,7 @@ main {
     bottom: 0;
     right: 0;
     background-color: color.$bg-hitam-overlay;
+    z-index: 10;
 
     form {
       background-color: color.$bg-putih;
@@ -71,6 +72,17 @@ main {
         font-size: font.$xxl;
         font-weight: font.$medium;
       }
+      .input-kata{
+        @include flex.flex-box(center,flex-start, column);
+        margin: 1.5rem 0 10px;
+        
+        label{
+          background-color: yellow;
+          font-family: font.$roboto;
+          font-weight: font.$medium;
+          font-size: font.$xl;
+        }
+        
       input {
         width: 28rem;
         font-size: font.$base;
@@ -79,12 +91,14 @@ main {
         border-radius: 0.5rem;
         border: 2px solid color.$gray-300;
         outline: none;
-        margin: 1.2rem 0;
+        margin: .5rem 0 1.2rem;
       }
       input:focus {
         border-color: color.$blue-500;
         outline: none;
       }
+      }
+      
       .btn {
         @include flex.flex-box(flex-end);
         gap: 1rem;
@@ -131,6 +145,7 @@ main {
       background-color: color.$blue-600;
       color: white;
       position: relative;
+      transition: width 0.5s ease;
       p {
         font-family: font.$roboto;
         font-size: font.$base;
@@ -148,6 +163,9 @@ main {
         top: -10px;
         right: -10px;
       }
+    }
+    .item:hover {
+      width: 0;
     }
   }
 }
