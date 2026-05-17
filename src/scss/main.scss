@@ -22,6 +22,7 @@ body {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     border-color: color.$gray-200;
+
     svg,
     span {
       color: white;
@@ -30,6 +31,7 @@ body {
       font-size: font.$base;
     }
   }
+
   .add-card:hover {
     background-color: color.$blue-700;
   }
@@ -37,6 +39,7 @@ body {
 
 main {
   padding: 1rem 1.5rem;
+
   .empty-state {
     @include flex.flex-box(center, center, column);
     display: none;
@@ -44,15 +47,17 @@ main {
     gap: 16px;
     font-family: font.$roboto;
     font-weight: font.$normal;
+
     svg {
       color: color.$gray-300;
     }
+
     p {
       color: color.$gray-500;
     }
   }
 
-  .form-new-card {
+  .form-new-card-container {
     @include flex.flex-box(center, center, column);
     display: none;
     position: absolute;
@@ -63,45 +68,49 @@ main {
     background-color: color.$bg-hitam-overlay;
     z-index: 10;
 
-    form {
+    .form-card {
       background-color: color.$bg-putih;
       padding: 1.3rem;
       font-family: font.$roboto;
       border-radius: 0.8rem;
+
       h2 {
         font-size: font.$xxl;
-        font-weight: font.$medium;
+        font-weight: font.$bold;
       }
-      .input-kata{
-        @include flex.flex-box(center,flex-start, column);
+
+      .input-kata {
+        @include flex.flex-box(center, flex-start, column);
         margin: 1.5rem 0 10px;
-        
-        label{
-          background-color: yellow;
+
+        label {
           font-family: font.$roboto;
           font-weight: font.$medium;
           font-size: font.$xl;
+          padding-left: 0.7rem;
         }
-        
-      input {
-        width: 28rem;
-        font-size: font.$base;
-        font-weight: font.$normal;
-        padding: 12px 14px;
-        border-radius: 0.5rem;
-        border: 2px solid color.$gray-300;
-        outline: none;
-        margin: .5rem 0 1.2rem;
+
+        input {
+          width: 28rem;
+          font-size: font.$base;
+          font-weight: font.$normal;
+          padding: 12px 14px;
+          border-radius: 0.5rem;
+          border: 2px solid color.$gray-300;
+          outline: none;
+          margin: 0.5rem 0 1.2rem;
+        }
+
+        input:focus {
+          border-color: color.$blue-500;
+          outline: none;
+        }
       }
-      input:focus {
-        border-color: color.$blue-500;
-        outline: none;
-      }
-      }
-      
+
       .btn {
         @include flex.flex-box(flex-end);
         gap: 1rem;
+
         .cancel {
           background-color: color.$gray-200;
           border: 1px solid color.$gray-200;
@@ -111,11 +120,13 @@ main {
           font-size: font.$base;
           font-weight: font.$medium;
         }
+
         .cancel:hover {
           background-color: color.$gray-300;
         }
-        .make-folder {
-          background-color: color.$blue-500;
+
+        .make-card {
+          background-color: color.$blue-600;
           border: 1px solid color.$gray-200;
           padding: 0.7rem 1rem;
           border-radius: 0.5rem;
@@ -123,9 +134,16 @@ main {
           font-size: font.$base;
           font-weight: font.$medium;
           color: white;
+          transition: all 0.2s ease;
         }
-        .make-folder:hover {
+
+        .make-card:hover {
           background-color: color.$blue-600;
+        }
+
+        button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
         }
       }
     }
@@ -133,24 +151,55 @@ main {
 
   .list-items {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 233px);
     gap: 1rem;
+
     .item {
-      height: 100px;
       @include flex.flex-box(center, center);
-      border: 2px solid color.$gray-200;
+      height: 100px;
       border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-      gap: 15px;
-      background-color: color.$blue-600;
-      color: white;
       position: relative;
-      transition: width 0.5s ease;
-      p {
-        font-family: font.$roboto;
-        font-size: font.$base;
-        font-weight: font.$normal;
+      perspective: 1000px;
+
+      .text {
+        position: relative;
+        @include flex.flex-box(center, center);
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        border-radius: 0.4rem;
+        border: 2px solid color.$gray-200;
+        transition: transform 0.5s ease;
+        transform-style: preserve-3d;
+
+        .text-front,
+        .text-behind {
+          position: absolute;
+          inset: 0;
+          margin: 0;
+          @include flex.flex-box(center, center);
+          width: 100%;
+          height: 100%;
+          background-color: purple;
+          color: white;
+          font-family: font.$noto-sans;
+          font-size: font.$base;
+          font-weight: font.$bold;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          border-radius: 0.5rem;
+        }
+
+        .text-front {
+          background-color: color.$blue-600;
+        }
+
+        .text-behind {
+          transform: rotateY(180deg);
+          background-color: color.$gray-500;
+        }
       }
+
       .delete {
         @include flex.flex-box(center, center);
         width: 35px;
@@ -164,8 +213,8 @@ main {
         right: -10px;
       }
     }
-    .item:hover {
-      width: 0;
+    .text.active {
+      transform: rotateY(180deg);
     }
   }
 }

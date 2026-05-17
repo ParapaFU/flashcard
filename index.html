@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- font Roboto -->
+    <!-- font Roboto, noto sans, noto sans jp -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <!-- css dan reset -->
@@ -34,24 +34,38 @@
       </button>
     </header>
     <main>
-      <section class="form-new-card">
-        <form action="">
+      <section id="form-card-container" class="form-new-card-container">
+        <form id="form-card" class="form-card">
           <h2>Tambah Card Baru</h2>
           <div class="input-kata">
-          <label for="input-text-front">Front:</label>
-          <input type="text" placeholder="Kata card" id="input-text-front" />
-          <label for="input-text-behind">Behind:</label>
-          <input type="text" placeholder="Kata card" id="input-text-behind" />
+            <label for="input-text-front">Front:</label>
+            <input
+              type="text"
+              placeholder="Kata card"
+              id="input-text-front"
+              class="input-text"
+            />
+            <label for="input-text-behind">Behind:</label>
+            <input
+              type="text"
+              placeholder="Kata card"
+              id="input-text-behind"
+              class="input-text"
+            />
           </div>
           <div class="btn">
-            <button class="cancel">Batal</button>
-            <button class="make-folder">Buat Card</button>
+            <button type="button" id="cancel-btn" class="cancel">Batal</button>
+            <button type="submit" id="create-btn" class="make-card">
+              Buat Card
+            </button>
           </div>
         </form>
       </section>
-      <section class="list-items">
+      <section id="container-data" class="list-items">
         <div class="item">
-          <p class="text-front">Mana</p>
+          <div class="text">
+            <p class="text-front">Mana</p>
+          </div>
           <button class="delete">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +134,7 @@
         <p>Belum ada folder. Klik tombol "Tambah Folder" untuk memulai.</p>
       </section>
     </main>
-    
+
     <script src="src/js/main.js"></script>
   </body>
 </html>
