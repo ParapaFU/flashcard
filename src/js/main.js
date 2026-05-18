@@ -14,6 +14,9 @@ const inputForms = document.querySelectorAll(".input-text");
 // btn create card | form card
 const createBtn = document.getElementById("create-btn");
 
+// simpan tambah card || form card
+const simpanTambahBtn = document.getElementById("simpan-tambah-btn");
+
 // btn cancel | form new card
 const cancelBtn = document.getElementById("cancel-btn");
 
@@ -31,6 +34,7 @@ const textData = dataContainer.querySelector(".text");
 function checkForm() {
   const allInput = [...inputForms].every((input) => input.value.trim() !== "");
 
+  simpanTambahBtn.disabled = !allInput;
   createBtn.disabled = !allInput;
 }
 
@@ -111,6 +115,7 @@ addCardBtn.addEventListener("click", () => {
 // menghilangkan form
 cancelBtn.addEventListener("click", () => {
   formCardContainer.style.display = "none";
+  formCard.reset();
 });
 
 // pengecekan input terisi semua
@@ -119,6 +124,8 @@ formCard.addEventListener("input", checkForm);
 // mengirim data
 formCardContainer.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  const btn = e.submitter;
 
   const frontText = document.getElementById("input-text-front").value;
   const behindText = document.getElementById("input-text-behind").value;
@@ -135,6 +142,10 @@ formCardContainer.addEventListener("submit", (e) => {
 
   formCard.reset();
   tampilkanData();
+
+  if (btn.matches(".simpan-card")) {
+    formCardContainer.style.display = "none";
+  }
 });
 
 // form event

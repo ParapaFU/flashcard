@@ -126,7 +126,25 @@ main .form-new-card-container .form-card .btn .cancel {
 main .form-new-card-container .form-card .btn .cancel:hover {
   background-color: #d1d5db;
 }
-main .form-new-card-container .form-card .btn .make-card {
+main .form-new-card-container .form-card .btn .simpan-tambah-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  background-color: #16a34a;
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+main .form-new-card-container .form-card .btn .simpan-tambah-card:hover {
+  background-color: #15803d;
+}
+main .form-new-card-container .form-card .btn .simpan-card {
   background-color: #2563eb;
   border: 1px solid #e5e7eb;
   padding: 0.7rem 1rem;
@@ -137,8 +155,8 @@ main .form-new-card-container .form-card .btn .make-card {
   color: white;
   transition: all 0.2s ease;
 }
-main .form-new-card-container .form-card .btn .make-card:hover {
-  background-color: #2563eb;
+main .form-new-card-container .form-card .btn .simpan-card:hover {
+  background-color: #1d4ed8;
 }
 main .form-new-card-container .form-card .btn button:disabled {
   opacity: 0.5;
